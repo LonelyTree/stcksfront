@@ -13,18 +13,7 @@ class App extends Component {
   handleRegister = async (data) => {
     try {
 
-      const registerResponse = await fetch('http://localhost:8000/users/registration', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        credentials: 'include',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-
-      })
-
-      const registerParsed = await registerResponse.json()
-      console.log(registerParsed, 'parsed register')
+      
     } catch(err){
       console.log(err)
     }
