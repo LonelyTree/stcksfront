@@ -5,6 +5,7 @@ import Register from './register';
 import Inputs from './components/Inputs'
 import Chopsticks from './components/Chopsticks'
 import Background from './components/Background'
+import StickList from './components/StickList'
 
 
 class App extends Component {
@@ -58,22 +59,15 @@ getBackground = (background) => {
       console.log(err)
     }
   }
-  getDogs = async () => {
-    try {
-      const response = await fetch('http://localhost:8000/api/v1/dogs', {
-        credentials: 'include'
-      });
-
-
-      if(response.ok){
-        const responseParsed = await response.json();
-        console.log(responseParsed)
-      }
-    } catch(err){
-      console.log(err)
-    }
-
+  changeSticks= (newSticks) => {
+    this.setState({
+      chopstickLength:newSticks.length,
+      chopstickWidth:newSticks.width,
+      chopstickColor:newSticks.color,
+      chopstickMessage:newSticks.message
+    })
   }
+
   render() {
     return (
       <div style={{backgroundImage:`url(${this.state.backgroundURL})`}}>
@@ -85,6 +79,7 @@ getBackground = (background) => {
         <Inputs pushChopsticks={this.setChopsticks}/>
         <Background getBackground={this.getBackground}/>
         <Register handleRegister={this.handleRegister}/>
+        <StickList changeSticks={this.changeSticks}/>
       
 
         
