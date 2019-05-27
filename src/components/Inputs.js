@@ -32,9 +32,6 @@ class Inputs extends Component{
                 <input id = 'uniqueIDTwo' placeholder='width'/>
                 <input id = 'uniqueIDThree' placeholder='color'/>
                 <input id = 'uniqueIDFour' placeholder='message'/>
-                
-               
-
                 <button type="submit" > Submit Chopsticks</button>
                 </form>
          

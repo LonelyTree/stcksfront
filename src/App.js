@@ -36,7 +36,6 @@ getBackground = (background) => {
 }
 
   componentDidMount (){
-   this.getDogs()
 
   }
   handleRegister = async (data) => {
