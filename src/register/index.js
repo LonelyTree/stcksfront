@@ -23,7 +23,7 @@ class Register extends Component {
   }
   render(){
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} style={{'float':'right','border':'solid black','marginTop':'0'}}>
         <label>
           Username:
           <input type='text' name='username' onChange={this.handleChange}/><br/>

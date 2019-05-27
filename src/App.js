@@ -9,16 +9,13 @@ import StickList from './components/StickList'
 
 
 class App extends Component {
-
   state = {
     chopstickLength: '90px',
     chopstickWidth: '20px',
     chopstickColor: 'yellow',
     chopstickSize:null,
     backgroundURL: null
-
   }
-
   setChopsticks = (awry) => {
     this.setState({
       chopstickLength:awry[0],
@@ -27,7 +24,7 @@ class App extends Component {
       chopstickMessage:awry[4],
       chopstickSize:parseInt(awry[0],10)
     })
-
+    this.render()
   }
 
 getBackground = (background) => { 
@@ -35,13 +32,8 @@ getBackground = (background) => {
     backgroundURL:background
   })
 }
-
-  componentDidMount (){
-
-  }
   handleRegister = async (data) => {
     try {
-
       const registerCall = await fetch('http://localhost:8000/users/registration', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -49,12 +41,9 @@ getBackground = (background) => {
         headers: {
           'Content-Type': 'application/json'
         }
-
       })
-
       const response = await registerCall.json()
       console.log(response, 'from the flask server on localhost:8000')
-
     } catch(err){
       console.log(err)
     }
@@ -71,18 +60,17 @@ getBackground = (background) => {
   render() {
     return (
       <div style={{backgroundImage:`url(${this.state.backgroundURL})`}}>
-        <h1>GoodSticks</h1>
+        <h1 style={{'marginLeft':'50%'}}>GoodSticks</h1>
+        <Register handleRegister={this.handleRegister}/>
         <h2>Is it good?</h2>
-        
         <Chopsticks message={this.state.chopstickMessage} width={this.state.chopstickWidth} length={this.state.chopstickLength} color={this.state.chopstickColor}/>
+
+
+
         
         <Inputs pushChopsticks={this.setChopsticks}/>
         <Background getBackground={this.getBackground}/>
-        <Register handleRegister={this.handleRegister}/>
         <StickList changeSticks={this.changeSticks}/>
-      
-
-        
       </div>
     )
   }

@@ -53,10 +53,10 @@ class Inputs extends Component{
               <div >
               <h1>ChopstickInfo</h1>
               <form  onSubmit={this.pushValuesUp}>
-                <input id = 'uniqueIDOne' placeholder='length'/>
-                <input id = 'uniqueIDTwo' placeholder='width'/>
-                <input id = 'uniqueIDThree' placeholder='color'/>
-                <input id = 'uniqueIDFour' placeholder='message'/>
+                <input id = 'uniqueIDOne' placeholder='length'/><br/>
+                <input id = 'uniqueIDTwo' placeholder='width'/><br/>
+                <input id = 'uniqueIDThree' placeholder='color'/><br/>
+                <input id = 'uniqueIDFour' placeholder='message'/><br/>
                 <button type="submit" > Submit Chopsticks</button>
                 </form>
          

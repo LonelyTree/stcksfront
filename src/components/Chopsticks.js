@@ -17,8 +17,8 @@ class Chopsticks extends Component{
       render(){
           return(
               <div className="chopstickHolder" style={{'height':this.props.height}} >
-<div className="chopstick" style={{'height':this.props.length,'width':this.props.width,'backgroundColor':this.props.color,'float':'left'}}>{this.props.message}</div>
-<div className="chopstick" style={{'height':this.props.length,'width':this.props.width,'float':'right','backgroundColor':this.props.color, 'marginLeft':'20px', 'marginRight':'90%'}}>{this.props.message}</div>
+<div className="chopstick" style={{'height':this.props.length,'width':this.props.width,'backgroundColor':this.props.color}}>{this.props.message}</div>
+<div className="chopstick" style={{'height':this.props.length,'width':this.props.width,'backgroundColor':this.props.color,'display':'block', 'marginLeft':'100px', 'clear':'right','marginRight':'90%'}}>{this.props.message}</div>
 </div>
 
 

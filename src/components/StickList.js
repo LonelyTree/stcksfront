@@ -45,7 +45,7 @@ class Chopsticks extends Component{
 
       render(){
           return(
-              <div> 
+              <div style={{'backgroundColor':'yellow','height':'50%','width':'50%'}}> 
                   <h2>Your chopsticks</h2>
                   <h4>{this.state.listOfSticks.map((element,index)=>
                   <h2>
