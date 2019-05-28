@@ -24,6 +24,7 @@ class Register extends Component {
   justLogin = ()=>{
     var login = document.getElementById("login").value
     this.props.fuckingLogin(login)
+    //this.props.handleLogin(login)
   }
   render(){
     return (
@@ -51,6 +52,7 @@ class Register extends Component {
           <input type='text' id='login'/><br/>
         </label>
         <button type='button' onClick={this.justLogin}>Login</button>
+        <button type='button' onClick={this.props.logout}>Logout</button>
       </form>
 
       </div>
