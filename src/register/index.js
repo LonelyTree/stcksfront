@@ -59,7 +59,7 @@ class Register extends Component {
           <input type='text' id='password7'/><br/>
         </label>
         <button type='button' onClick={this.justLogin}>Login</button>
-        <button type='button' onClick={this.props.logout}>Logout</button>
+        <button type='button' onClick={this.props.handleLogout}>Logout</button>
         </form>
       
 

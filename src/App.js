@@ -108,6 +108,26 @@ getBackground = (background) => {
       console.log(err)
     }
   }
+
+  handleLogout = async (data) => {
+    try {
+      const registerCall = await fetch('http://localhost:8000/users/logout', {
+        credentials: 'include',
+      })
+      const response = await registerCall.json()
+      console.log(response, 'from the flask server on localhost:8000')
+      this.setState({
+        chopstickLength: '90px',
+        chopstickWidth: '20px',
+        chopstickColor: 'yellow',
+        chopstickSize:null,
+        backgroundURL: null,
+        logged:null
+      })
+    } catch(err){
+      console.log(err)
+    }
+  }
   changeSticks= (newSticks) => {
 
     this.setState({
@@ -125,7 +145,7 @@ getBackground = (background) => {
     return (
       <div style={{backgroundImage:`url(${this.state.backgroundURL})`}}>
         <h1 style={{'marginLeft':'50%'}}>GoodSticks</h1>
-        <Register logout={this.logout} handleLogin ={this.handleLogin} fuckingLogin={this.fuckingLogin} handleRegister={this.handleRegister}/>
+        <Register handleLogout={this.handleLogout} handleLogin ={this.handleLogin} fuckingLogin={this.fuckingLogin} handleRegister={this.handleRegister}/>
         <h2>Is it good?</h2>
         <Chopsticks message={this.state.chopstickMessage} width={this.state.chopstickWidth} length={this.state.chopstickLength} color={this.state.chopstickColor}/>
         <Inputs owner={this.state.logged} pushChopsticks={this.setChopsticks}/>
