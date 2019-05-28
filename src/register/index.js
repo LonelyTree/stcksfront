@@ -21,8 +21,13 @@ class Register extends Component {
     e.preventDefault()
     this.props.handleRegister(this.state)
   }
+  justLogin = ()=>{
+    var login = document.getElementById("login").value
+    this.props.fuckingLogin(login)
+  }
   render(){
     return (
+      <div>
       <form onSubmit={this.handleSubmit} style={{'float':'right','border':'solid black','marginTop':'0'}}>
         <label>
           Username:
@@ -40,8 +45,15 @@ class Register extends Component {
           verify_password:
           <input type='text' name='verify_password' onChange={this.handleChange}/><br/>
         </label>
-        <button type='submit'>Register</button>
+        <button type='submit'>Register</button><br/>
+        <label>
+          just login:
+          <input type='text' id='login'/><br/>
+        </label>
+        <button type='button' onClick={this.justLogin}>Login</button>
       </form>
+
+      </div>
 
       )
   }

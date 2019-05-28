@@ -28,6 +28,12 @@ class App extends Component {
     this.render()
   }
 
+  fuckingLogin = (username) => {
+    this.setState({
+      logged:username
+    })
+  }
+
 getBackground = (background) => { 
   this.setState({
     backgroundURL:background
@@ -65,12 +71,12 @@ getBackground = (background) => {
     return (
       <div style={{backgroundImage:`url(${this.state.backgroundURL})`}}>
         <h1 style={{'marginLeft':'50%'}}>GoodSticks</h1>
-        <Register handleRegister={this.handleRegister}/>
+        <Register fuckingLogin={this.fuckingLogin} handleRegister={this.handleRegister}/>
         <h2>Is it good?</h2>
         <Chopsticks message={this.state.chopstickMessage} width={this.state.chopstickWidth} length={this.state.chopstickLength} color={this.state.chopstickColor}/>
         <Inputs owner={this.state.logged} pushChopsticks={this.setChopsticks}/>
         <Background getBackground={this.getBackground}/>
-        {this.state.logged?<StickList changeSticks={this.changeSticks}/>:null}
+        {this.state.logged?<StickList owner={this.state.logged} changeSticks={this.changeSticks}/>:null}
       </div>
     )
   }

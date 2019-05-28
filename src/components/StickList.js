@@ -18,7 +18,7 @@ class Chopsticks extends Component{
 
       getChopsticks = async () => {
         try {
-          const response = await fetch('http://localhost:8000/api/v1/chopsticks', {
+          const response = await fetch(`http://localhost:8000/api/v1/chopsticks/list/${this.props.owner}`, {
             credentials: 'include'
           });
     
