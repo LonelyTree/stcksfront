@@ -26,14 +26,19 @@ class Chopsticks extends Component{
           if(response.ok){
             const responseParsed = await response.json();
             console.log(responseParsed)
-            this.setState({
+            await this.setState({
                 listOfSticks:responseParsed
             })
+            this.addThings()
           }
         } catch(err){
           console.log(err)
         }
     
+      }
+
+      addThings = ()=>{
+          this.props.addToList(this.state.listOfSticks)
       }
 
      
@@ -47,7 +52,8 @@ class Chopsticks extends Component{
           return(
               <div style={{'backgroundColor':'yellow','height':'50%','width':'50%'}}> 
                   <h2>Your chopsticks</h2>
-                  <h4>{this.state.listOfSticks.map((element,index)=>
+                  {console.log(this.props)}
+                  <h4>{this.props.newList==undefined?undefined:this.props.newList.map((element,index)=>
                   <h2>
                   {element.length+"   "} 
                   {element.width+"   "} 

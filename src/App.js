@@ -18,14 +18,33 @@ class App extends Component {
     logged:null
   }
   setChopsticks = (awry) => {
+    let newItem={
+      length:awry[0],
+      width:awry[1],
+      color:awry[2],
+      message:awry[4],
+      owner:this.state.logged
+    }
     this.setState({
       chopstickLength:awry[0],
       chopstickWidth:awry[1],
       chopstickColor:awry[2],
       chopstickMessage:awry[4],
-      chopstickSize:parseInt(awry[0],10)
+      chopstickSize:parseInt(awry[0],10),
+      listOfSticks: [{length:'idk'}],
     })
-    this.render()
+    if(this.state.logged){
+      this.setState({
+        listOfSticks:[...this.state.listOfSticks,newItem]
+      })
+    }
+ 
+  }
+
+  addToList = (list)=>{
+    this.setState({
+      listOfSticks:list
+    })
   }
 
   fuckingLogin = (username) => {
@@ -59,12 +78,16 @@ getBackground = (background) => {
     }
   }
   changeSticks= (newSticks) => {
+
     this.setState({
       chopstickLength:newSticks.length,
       chopstickWidth:newSticks.width,
       chopstickColor:newSticks.color,
       chopstickMessage:newSticks.message
     })
+
+    
+    
   }
 
   render() {
@@ -76,7 +99,7 @@ getBackground = (background) => {
         <Chopsticks message={this.state.chopstickMessage} width={this.state.chopstickWidth} length={this.state.chopstickLength} color={this.state.chopstickColor}/>
         <Inputs owner={this.state.logged} pushChopsticks={this.setChopsticks}/>
         <Background getBackground={this.getBackground}/>
-        {this.state.logged?<StickList owner={this.state.logged} changeSticks={this.changeSticks}/>:null}
+        {this.state.logged?<StickList newList={this.state.listOfSticks} addToList={this.addToList} owner={this.state.logged} changeSticks={this.changeSticks}/>:null}
       </div>
     )
   }
