@@ -14,7 +14,8 @@ class App extends Component {
     chopstickWidth: '20px',
     chopstickColor: 'yellow',
     chopstickSize:null,
-    backgroundURL: null
+    backgroundURL: null,
+    logged:null
   }
   setChopsticks = (awry) => {
     this.setState({
@@ -44,6 +45,9 @@ getBackground = (background) => {
       })
       const response = await registerCall.json()
       console.log(response, 'from the flask server on localhost:8000')
+      this.setState({
+        logged: response.username
+      })
     } catch(err){
       console.log(err)
     }
@@ -70,7 +74,7 @@ getBackground = (background) => {
         
         <Inputs pushChopsticks={this.setChopsticks}/>
         <Background getBackground={this.getBackground}/>
-        <StickList changeSticks={this.changeSticks}/>
+        {this.state.logged?<StickList changeSticks={this.changeSticks}/>:null}
       </div>
     )
   }
