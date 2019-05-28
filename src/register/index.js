@@ -28,8 +28,8 @@ class Register extends Component {
   }
   render(){
     return (
-      <div>
-      <form onSubmit={this.handleSubmit} style={{'float':'right','border':'solid black','marginTop':'0'}}>
+      <div style={{'float':'right','border':'solid black','marginTop':'0'}}>
+      <form onSubmit={this.handleSubmit} >
         <label>
           Username:
           <input type='text' name='username' onChange={this.handleChange}/><br/>
@@ -47,13 +47,20 @@ class Register extends Component {
           <input type='text' name='verify_password' onChange={this.handleChange}/><br/>
         </label>
         <button type='submit'>Register</button><br/>
+        </form>
+        <form>
         <label>
-          just login:
+          Username:
           <input type='text' id='login'/><br/>
+        </label>
+        <label>
+          Password:
+          <input type='text' id='password'/><br/>
         </label>
         <button type='button' onClick={this.justLogin}>Login</button>
         <button type='button' onClick={this.props.logout}>Logout</button>
-      </form>
+        </form>
+      
 
       </div>
 
