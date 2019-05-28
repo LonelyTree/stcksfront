@@ -68,11 +68,7 @@ getBackground = (background) => {
         <Register handleRegister={this.handleRegister}/>
         <h2>Is it good?</h2>
         <Chopsticks message={this.state.chopstickMessage} width={this.state.chopstickWidth} length={this.state.chopstickLength} color={this.state.chopstickColor}/>
-
-
-
-        
-        <Inputs pushChopsticks={this.setChopsticks}/>
+        <Inputs owner={this.state.logged} pushChopsticks={this.setChopsticks}/>
         <Background getBackground={this.getBackground}/>
         {this.state.logged?<StickList changeSticks={this.changeSticks}/>:null}
       </div>

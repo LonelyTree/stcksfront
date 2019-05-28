@@ -21,11 +21,13 @@ class Inputs extends Component{
       var height = document.getElementById("uniqueIDThree").value
       var message = document.getElementById("uniqueIDFour").value
           this.props.pushChopsticks([length,width,height,message])
+          let theOwns=this.props.owner
           let objectToSend = {
               length:length,
               width:width,
               color:height,
               message:message,
+              owner:theOwns,
               created_by_id:'Reed'
           }
           try {
