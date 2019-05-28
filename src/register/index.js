@@ -22,9 +22,10 @@ class Register extends Component {
     this.props.handleRegister(this.state)
   }
   justLogin = ()=>{
-    var login = document.getElementById("login").value
-    this.props.fuckingLogin(login)
-    //this.props.handleLogin(login)
+    var login ={username:document.getElementById("login7").value,
+              password:document.getElementById("password7").value}
+    //this.props.fuckingLogin(login)
+    this.props.handleLogin(login)
   }
   render(){
     return (
@@ -51,11 +52,11 @@ class Register extends Component {
         <form>
         <label>
           Username:
-          <input type='text' id='login'/><br/>
+          <input type='text' id='login7'/><br/>
         </label>
         <label>
           Password:
-          <input type='text' id='password'/><br/>
+          <input type='text' id='password7'/><br/>
         </label>
         <button type='button' onClick={this.justLogin}>Login</button>
         <button type='button' onClick={this.props.logout}>Logout</button>
