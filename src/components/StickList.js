@@ -4,9 +4,15 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
+<<<<<<< HEAD
 backgroundColor: yellow;
 height: 50%;
 width: 50%;
+=======
+	backgroundColor: yellow;
+	height: 50%;
+	width: 50%;
+>>>>>>> 275227a4fe24211035b7bf4c99a2d82467a29a88
     position: absolute;
 `
 
