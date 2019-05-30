@@ -23,14 +23,14 @@ const Labels = styled.label`
     line-height: 2vw;
 `
 const FancyButton = styled.button`
-    width: 30vh;
+    width: 95%;
     border-radius: 10px;
     background: #00fffe59;
     font-family: 'Lobster';
     font-size: 2vh;
 `
 const Inputs = styled.input`
-    width: 30vh;
+    width: 93%;
     font-family: 'Anonymous Pro';
     font-size: 2vh;
 `

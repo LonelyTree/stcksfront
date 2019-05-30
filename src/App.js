@@ -14,17 +14,17 @@ const Wrapper=styled.div`
     display: inline-flex;
 `
 const Title = styled.h1`
-    margin-left: 12%;
-    margin-top: 1%;
-    font-size: 400%;
+    margin-left: 14vw;
+    margin-top: 3vh;
+    font-size: 5vw;
     position: absolute;
     font-family: 'lobster';
 }
 `
 const Title2=styled.h2`
     position: absolute;
-    margin-left: 51%;
-    margin-top: 5%;
+    margin-left: 50vw;
+    margin-top: 11.5vh;
     font-size: 300%;
     font-family: 'lobster';
     border: solid;

@@ -4,10 +4,10 @@ import styled from 'styled-components'
 
 const LogMeIn = styled.div`
     position: absolute;
-    margin-left: 90vw;
-    margin-top: 5vh;
+    margin-left: 89vw;
+    margin-top: 2vh;
     font-family: 'lobster';
-    font-size: 140%;
+    font-size: 2vw;
     border-bottom: solid;
     padding: 1vh;
     cursor: pointer;

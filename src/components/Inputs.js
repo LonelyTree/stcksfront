@@ -15,8 +15,11 @@ const Header=styled.div`
 const Form1 = styled.form`
     position: absolute;
 `
-const PressMe = styled.input`
-
+const UseMe = styled.input`
+background:blue
+`
+const PokeMe=styled.button`
+background:blue
 `
 class Inputs extends Component{
     constructor(props) {
@@ -64,11 +67,11 @@ class Inputs extends Component{
               <Wrapper >
               <Header>ChopstickInfo</Header>
                 <Form1  onSubmit={this.pushValuesUp}>
-                  <input id = 'uniqueIDOne' placeholder='length'/><br/>
-                  <input id = 'uniqueIDTwo' placeholder='width'/><br/>
-                  <input id = 'uniqueIDThree' placeholder='color'/><br/>
-                  <input id = 'uniqueIDFour' placeholder='message'/><br/>
-                  <button type="submit" > Submit Chopsticks</button>
+                  <UseMe id = 'uniqueIDOne' placeholder='length'/><br/>
+                  <UseMe id = 'uniqueIDTwo' placeholder='width'/><br/>
+                  <UseMe id = 'uniqueIDThree' placeholder='color'/><br/>
+                  <UseMe id = 'uniqueIDFour' placeholder='message'/><br/>
+                  <PokeMe type="submit" > Submit Chopsticks</PokeMe>
                 </Form1>
               </Wrapper>
           )

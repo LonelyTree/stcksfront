@@ -10,8 +10,9 @@ const Wrapper=styled.div`
 const Title=styled.h1`
     font-family: 'lobster';
     position: absolute;
-    margin-left: 39vw;
-    font-size: 1500%;
+    margin-top: 20vh;
+    margin-left: 34vw;
+    font-size: 17vw;
 `
 const config = {
     angle: "50",
@@ -63,5 +64,5 @@ export default Answer
 
 // sweet party horn jamming out = https://bit.ly/30S7p9b
 // party horn blasting = https://bit.ly/2wzSQsR
-// 
+// happy birthday = https://bit.ly/2MhR0aY
 
