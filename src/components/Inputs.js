@@ -10,16 +10,34 @@ const Wrapper=styled.div`
 
 const Header=styled.div`
     position: absolute;
+    height: 25vh;
+    width: 12vw;
+    margin-top: -5vh;
+    margin-left: 0.5vw;
+    font-family: 'Lobster';
+    font-size: 2vw;
 `
 
 const Form1 = styled.form`
     position: absolute;
 `
 const UseMe = styled.input`
-background:blue
+    text-align: center;
+    font-family: "Lobster";
+    margin-top: .3vw;
+    font-size: 1vw;
+    border-radius: .14vw;
+    border: .5px solid #00000038;
+    box-shadow: 0px 20px 1vw 0px #00000040;
 `
 const PokeMe=styled.button`
-background:blue
+    border-radius: 0vw 0vw .5vw .5vw;
+    margin-top: 0.5vh;
+    font-family: 'Lobster';
+    font-size: 1vw;
+    margin-left: 1.7vw;
+    box-shadow: 0px 18px 20px 0px #0000002e;
+    cursor: pointer;
 `
 class Inputs extends Component{
     constructor(props) {

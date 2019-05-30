@@ -25,6 +25,7 @@ const Press=styled.button`
     border: 1px black solid;
     border-left-style: none;
     border-right-style: none;
+    cursor: pointer;
 `
 const Form1=styled.form`
     position: absolute;
