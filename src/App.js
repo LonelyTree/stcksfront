@@ -7,11 +7,11 @@ import Chopsticks from './components/Chopsticks'
 import Background from './components/Background'
 import StickList from './components/StickList'
 import Login from './components/login'
+import Answer from './components/answer'
 
 const Wrapper=styled.div`
     justify-content: center;
     display: inline-flex;
-${'' /* backgroundImage:url(${this.state.backgroundURL}) */}
 `
 const Title = styled.h1`
     margin-left: 12%;
@@ -112,6 +112,7 @@ getBackground = (background) => {
   render() {
     return (
       <Wrapper>
+        <Answer/>
         <Title>GoodSticks</Title>
         {this.state.logged!=null
           ? <Register fuckingLogin={this.fuckingLogin} handleRegister={this.handleRegister} />
