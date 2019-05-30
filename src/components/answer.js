@@ -14,12 +14,12 @@ const Title=styled.h1`
     font-size: 1500%;
 `
 const config = {
-    angle: "58",
-    spread: "16",
+    angle: "50",
+    spread: "25",
     startVelocity: "27",
-    elementCount: "40",
-    dragFriction: "0.07",
-    duration: "10000",
+    elementCount: "20",
+    dragFriction: "0.06",
+    duration: "5000",
     stagger: "0",
     width: "11px",
     height: "10px",
@@ -28,27 +28,21 @@ const config = {
 
 class Answer extends Component{
     state={
-        good: false,
+        good: true,
         loaded: false
     }
     componentDidMount() {
-        this.setState({loaded: true})
+        setTimeout(() => {
+            this.setState({loaded: true})
+        }, (Math.floor(Math.random() * 3000)+0));
+        
     }
     render(){
         return(
             <Wrapper >
                 {console.log(this.state.loaded)}
 
-                <Confetti
-                    active={this.state.loaded}
-                    style={{
-                    position: 'absolute',
-                    width: '10%',
-                    marginLeft: '46vw',
-                    height: '10%',
-                    marginTop: '25vh',
-                    background: 'blue'
-                    }} config={config} />
+                <Confetti active={this.state.loaded} config={config}/>
 
                 {this.state.good
                 ? <Title>YES!</Title>
