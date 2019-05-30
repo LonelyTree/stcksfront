@@ -37,7 +37,8 @@ class App extends Component {
     chopstickColor: 'yellow',
     chopstickSize:null,
     backgroundURL: null,
-    logged:null
+    logged: null,
+    clicked: false
   }
   setChopsticks = (awry) => {
     let newItem={
@@ -99,6 +100,9 @@ getBackground = (background) => {
       console.log(err)
     }
   }
+  liftUp=(change) => {
+    this.setState(change)
+  }
   changeSticks= (newSticks) => {
 
     this.setState({
@@ -114,9 +118,9 @@ getBackground = (background) => {
       <Wrapper>
         <Answer/>
         <Title>GoodSticks</Title>
-        {this.state.logged!=null
-          ? <Register fuckingLogin={this.fuckingLogin} handleRegister={this.handleRegister} />
-          : <Login/>}
+        {this.state.clicked
+          ? <Register fuckingLogin={this.fuckingLogin} liftUp={this.liftUp} handleRegister={this.handleRegister} />
+          :<Login liftUp={this.liftUp}/>}
         <Title2>Is it good?</Title2>
         <Chopsticks message={this.state.chopstickMessage} width={this.state.chopstickWidth} length={this.state.chopstickLength} color={this.state.chopstickColor}/>
         <Inputs owner={this.state.logged} pushChopsticks={this.setChopsticks}/>
