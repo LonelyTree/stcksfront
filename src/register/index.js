@@ -34,6 +34,23 @@ const Inputs = styled.input`
     font-family: 'Anonymous Pro';
     font-size: 2vh;
 `
+
+const PressyMcPressFace=styled.button`
+    margin-left: 11.5vw;
+    margin-top: 1.2vh;
+    text-align: center;
+    width: 7vh;
+    font-family: cursive;
+    height: 3vh;
+    border: 1px solid;
+    border-radius: 2px;
+    line-height: 2.7vh;
+    font-size: 81%;
+    font-weight: 800;
+    box-shadow: 0 0 5px #c0ffff;
+    cursor: pointer;
+    z-index: 10;
+`
 class Register extends Component {
   constructor(){
     super();
@@ -59,9 +76,13 @@ class Register extends Component {
     var login = document.getElementById("login").value
     this.props.fuckingLogin(login)
   }
+  lift=() => {
+    this.props.liftUp({clicked:false})
+  }
   render(){
     return (
       <Wrapper>
+        <PressyMcPressFace onClick={this.lift}>X</PressyMcPressFace>
       <Form1 onSubmit={this.handleSubmit} style={{'float':'right','border':'solid black','marginTop':'0'}}>
         <Labels>
           Username:

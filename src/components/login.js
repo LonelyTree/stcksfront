@@ -14,8 +14,11 @@ const LogMeIn = styled.div`
 `
 
 class Login extends Component{
-    render(){
-        return (<LogMeIn>
+    onClick=() => {
+        this.props.liftUp({clicked:true})
+    }
+    render() {
+        return (<LogMeIn onClick={this.onClick}>
                 Login/Register
                 </LogMeIn>)
     }
