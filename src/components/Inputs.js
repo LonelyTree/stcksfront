@@ -1,11 +1,23 @@
 import React, {Component} from 'react';
-
 import '../App.css';
+import styled from 'styled-components'
 
+const Wrapper=styled.div`
+    position: absolute;
+    margin-top: 65vh;
+    margin-left: 5vw;
+`
 
+const Header=styled.div`
+    position: absolute;
+`
 
+const Form1 = styled.form`
+    position: absolute;
+`
+const PressMe = styled.input`
 
-
+`
 class Inputs extends Component{
     constructor(props) {
         super(props);
@@ -18,14 +30,14 @@ class Inputs extends Component{
         e.preventDefault()
       var length = document.getElementById("uniqueIDOne").value+"px"
       var width = document.getElementById("uniqueIDTwo").value+'px'
-      var height = document.getElementById("uniqueIDThree").value
+      var color = document.getElementById("uniqueIDThree").value
       var message = document.getElementById("uniqueIDFour").value
-          this.props.pushChopsticks([length,width,height,message])
+          this.props.pushChopsticks([length,width,color,message])
           let theOwns=this.props.owner
           let objectToSend = {
               length:length,
               width:width,
-              color:height,
+              color:color,
               message:message,
               owner:theOwns,
               created_by_id:'Reed'
@@ -39,12 +51,9 @@ class Inputs extends Component{
               headers: {
                 'Content-Type': 'application/json'
               }
-      
             })
-      
             const response = await registerCall.json()
             console.log(response, 'from the flask server on localhost:8000')
-      
           } catch(err){
             console.log(err)
           }
@@ -52,22 +61,16 @@ class Inputs extends Component{
 
       render(){
           return(
-              <div >
-              <h1>ChopstickInfo</h1>
-              <form  onSubmit={this.pushValuesUp}>
-                <input id = 'uniqueIDOne' placeholder='length'/><br/>
-                <input id = 'uniqueIDTwo' placeholder='width'/><br/>
-                <input id = 'uniqueIDThree' placeholder='color'/><br/>
-                <input id = 'uniqueIDFour' placeholder='message'/><br/>
-                <button type="submit" > Submit Chopsticks</button>
-                </form>
-         
-
-</div>
-
-
-
-
+              <Wrapper >
+              <Header>ChopstickInfo</Header>
+                <Form1  onSubmit={this.pushValuesUp}>
+                  <input id = 'uniqueIDOne' placeholder='length'/><br/>
+                  <input id = 'uniqueIDTwo' placeholder='width'/><br/>
+                  <input id = 'uniqueIDThree' placeholder='color'/><br/>
+                  <input id = 'uniqueIDFour' placeholder='message'/><br/>
+                  <button type="submit" > Submit Chopsticks</button>
+                </Form1>
+              </Wrapper>
           )
       }
     }

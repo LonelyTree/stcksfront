@@ -1,13 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Register from './register';
 import Inputs from './components/Inputs'
+import styled from 'styled-components'
 import Chopsticks from './components/Chopsticks'
 import Background from './components/Background'
 import StickList from './components/StickList'
+import Login from './components/login'
+import Answer from './components/answer'
 
-
+const Wrapper=styled.div`
+    justify-content: center;
+    display: inline-flex;
+`
+const Title = styled.h1`
+    margin-left: 12%;
+    margin-top: 1%;
+    font-size: 400%;
+    position: absolute;
+    font-family: 'lobster';
+}
+`
+const Title2=styled.h2`
+    position: absolute;
+    margin-left: 51%;
+    margin-top: 5%;
+    font-size: 300%;
+    font-family: 'lobster';
+    border: solid;
+    padding: .5vh;
+`
 class App extends Component {
   state = {
     chopstickLength: '90px',
@@ -85,22 +107,22 @@ getBackground = (background) => {
       chopstickColor:newSticks.color,
       chopstickMessage:newSticks.message
     })
-
-    
-    
   }
 
   render() {
     return (
-      <div style={{backgroundImage:`url(${this.state.backgroundURL})`}}>
-        <h1 style={{'marginLeft':'50%'}}>GoodSticks</h1>
-        <Register fuckingLogin={this.fuckingLogin} handleRegister={this.handleRegister}/>
-        <h2>Is it good?</h2>
+      <Wrapper>
+        <Answer/>
+        <Title>GoodSticks</Title>
+        {this.state.logged!=null
+          ? <Register fuckingLogin={this.fuckingLogin} handleRegister={this.handleRegister} />
+          : <Login/>}
+        <Title2>Is it good?</Title2>
         <Chopsticks message={this.state.chopstickMessage} width={this.state.chopstickWidth} length={this.state.chopstickLength} color={this.state.chopstickColor}/>
         <Inputs owner={this.state.logged} pushChopsticks={this.setChopsticks}/>
         <Background getBackground={this.getBackground}/>
         {this.state.logged?<StickList newList={this.state.listOfSticks} addToList={this.addToList} owner={this.state.logged} changeSticks={this.changeSticks}/>:null}
-      </div>
+      </Wrapper>
     )
   }
 }
